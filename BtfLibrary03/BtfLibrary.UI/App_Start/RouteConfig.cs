@@ -5,13 +5,19 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 
-namespace BtfLibrary.UI
+namespace Lib.UI
 {
     public class RouteConfig
     {
         public static void RegisterRoutes(RouteCollection routes)
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
+
+            routes.MapRoute(
+                name: null,
+                url: "Page{page}",
+                defaults: new { controller = "Books", action = "List" }
+                );
 
             routes.MapRoute(
                 name: "Default",
